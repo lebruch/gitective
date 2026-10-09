@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitective"
+version = "1.12.0"
+description = "GitHub OSINT recon framework, à la nxc"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "requests>=2.31",
+    "rich>=13.0",
+    "platformdirs>=4.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+gitective = "gitective.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
